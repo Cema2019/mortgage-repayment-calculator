@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Mortgage Repayment Calculator</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body style="background-color: #e3f4fc;">
+  <main class="rounded-left-border bg-white d-flex flex-column flex-md-row my-md-5 mx-lg-5">
+    <section class="w-100 w-md-50 pt-5 px-3">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center">
+        <h5>Mortgage Calculator</h5>
+        <a href="#" id="clear-all" class="link-secondary">Clear All</a>
+      </div>
+
+      <div class="container my-5 w-100">
+        <form id="loan-form">
+          <div class="mb-3">
+            <label for="principal" class="form-label text-secondary">Mortgage Amount</label>
+            <div class="input-group">
+              <span class="input-group-text text-secondary fw-bold" style="background-color: #e3f4fc;">£</span>
+              <input type="number" class="form-control" id="principal" step="0.1" min="1" required>
+            </div>
+          </div>
+
+          <!-- Mortgage Teams and Interest Rate fields -->
+          <div class="d-flex flex-column flex-md-row gap-3 mb-3">
+            <div class="w-100">
+              <label for="loanTerm" class="form-label text-secondary">Mortgage Term</label>
+              <div class="input-group">
+                <input type="number" class="form-control" id="loanTerm" min="1" required>
+                <span class="input-group-text text-secondary fw-bold" style="background-color: #e3f4fc;">Years</span>
+              </div>
+            </div>
+
+            <div class="w-100">
+              <label for="interestRate" class="form-label text-secondary">Interest Rate </label>
+              <div class="input-group">
+                <input type="number" class="form-control" id="interestRate" step="0.01" min="1" required>
+                <span class="input-group-text text-secondary fw-bold" style="background-color: #e3f4fc;">%</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Repayment and Interest Only fields -->
+          <label class="form-label text-secondary">Mortgage Type</label>
+          <div class="d-flex flex-column flex-md-row gap-3 mb-3">            
+            <div class="form-check border border-secondary rounded py-2 w-100">
+              <input class="form-check-input ms-1" type="radio" name="mortgageType" id="repaymentOption" value="repayment">
+              <label class="form-check-label ms-2 text-secondary fw-bold" for="repaymentOption">
+                Repayment
+              </label>
+            </div>
+
+            <div class="form-check border border-secondary rounded py-2 w-100">
+              <input class="form-check-input ms-1" type="radio" name="mortgageType" id="interestOnlyOption" value="interest">
+              <label class="form-check-label ms-2 text-secondary fw-bold" for="interestOnlyOption">
+                Interest Only
+              </label>
+            </div>
+          </div>
+
+          <div class="text-center mt-5">
+            <button type="submit" class="btn fw-bold rounded-pill px-4" style="color: #182840; background-color: #d9db30;"><i class="fa-solid fa-calculator me-2"></i>Calculate Repayments</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- RESULTS -->
+    <section class="results-container d-flex w-100 w-md-50 py-5 px-4 rounded-bottom-left-border" style="background-color: #133040;">
+
+      <!-- Intro starts -->
+      <div class="empty-results d-flex flex-column justify-content-center align-items-center text-center">
+        <img src="https://i.ibb.co/s9T6G8Z/illustration-empty.png" alt="intro-image" style="width: 200px;">
+
+        <h3 class="text-white">Results shown here</h3>
+
+        <p style="color: #68879b;">Complete the form and click “calculate repayments” to see what
+          your monthly repayments would be.</p>
+      </div>
+
+      <!-- Results are displayed -->
+      <div class="complete-results d-none d-flex flex-column justify-content-between text-center">
+        <div>
+          <h5 class="text-white">Your results</h5>
+          <p class="text-secondary text-justify">Your results are shown below based on the information you provided. To adjust the results, edit the form and click “calculate repayments” again.</p>
+        </div>
+
+        <div class="my-5 p-3 text-secondary text-start border-top border-warning border-4 rounded-3" style="background-color: #0e2431;">
+          <div>
+            <p>Your monthly repayments</p>
+            <p id="monthly-Pay" class="text-warning fw-bold display-1"></p>
+          </div>
+          <hr />
+          <div>
+            <p>Total you'll repay over the term</p>
+            <p id="total-amount" class="text-light fw-bold display-6"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script  src="./script.js"></script>
+
+</body>
+</html>
