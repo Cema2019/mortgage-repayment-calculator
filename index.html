@@ -7,8 +7,7 @@
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css'><link rel="stylesheet" href="./style.css">
 
 </head>
-<body>
-<!-- partial:index.partial.html -->
+
 <body style="background-color: #e3f4fc;">
   <main class="rounded-left-border bg-white d-flex flex-column flex-md-row my-md-5 mx-lg-5">
     <section class="w-100 w-md-50 pt-5 px-3">
@@ -46,18 +45,19 @@
             </div>
           </div>
 
-          <div class="mb-3">
-            <label class="form-label text-secondary">Mortgage Type</label>
-            <div class="form-check border border-secondary rounded mb-2 py-2">
+          <!-- Repayment and Interest Only fields -->
+          <label class="form-label text-secondary">Mortgage Type</label>
+          <div class="d-flex flex-column flex-md-row gap-3 mb-3">            
+            <div class="form-check border border-secondary rounded py-2 w-100">
               <input class="form-check-input ms-1" type="radio" name="mortgageType" id="repaymentOption" value="repayment">
-              <label class="form-check-label ms-2  text-secondary fw-bold" for="repaymentOption">
+              <label class="form-check-label ms-2 text-secondary fw-bold" for="repaymentOption">
                 Repayment
               </label>
             </div>
 
-            <div class="form-check border border-secondary rounded py-2">
+            <div class="form-check border border-secondary rounded py-2 w-100">
               <input class="form-check-input ms-1" type="radio" name="mortgageType" id="interestOnlyOption" value="interest">
-              <label class="form-check-label ms-2  text-secondary fw-bold" for="interestOnlyOption">
+              <label class="form-check-label ms-2 text-secondary fw-bold" for="interestOnlyOption">
                 Interest Only
               </label>
             </div>
@@ -104,8 +104,7 @@
       </div>
     </section>
   </main>
-</body>
-<!-- partial -->
+
   <script  src="./script.js"></script>
 
 </body>
